@@ -48,14 +48,21 @@ module.exports = class ChaosOrganizer {
             'Содержимое текста должно быть строкой',
           );
         }
-        return { ...formattedMessage, content };
+        const trimmed = content.trim();
+        if (trimmed === '') {
+          throw new OrganizerError(
+            400,
+            'Содержимое текста не должно быть пустым',
+          );
+        }
+        return { ...formattedMessage, content: trimmed };
 
       case 'sticker':
-        const parsedContent = JSON.parse(content);
-        if (!this.isStickerValid(parsedContent)) {
+        const parsed = JSON.parse(content);
+        if (!this.isStickerValid(parsed)) {
           throw new OrganizerError(400, 'Неверное значение стикера');
         }
-        return { ...formattedMessage, content: parsedContent };
+        return { ...formattedMessage, content: parsed };
 
       case 'files':
         return { ...formattedMessage };
