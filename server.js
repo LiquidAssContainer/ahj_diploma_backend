@@ -152,50 +152,18 @@ router
             return;
           }
           for (const file of files) {
-            console.log(file);
-            const path = `stickers/${dir}/${file}`;
+            const src = `stickers/${dir}/${file}`;
             const id = file.split('.')[0];
-            stickerPack.stickers.push({ path, id });
+            stickerPack.stickers.push({ src, id });
           }
-          stickerPack.preview = stickerPack.stickers[0].path;
+          stickerPack.preview = stickerPack.stickers[0].src;
           stickerPacks.push(stickerPack);
         });
       }
     });
-    console.log(stickerPacks);
     ctx.body = stickerPacks;
     return await next();
   });
-
-// .get('/:user/pinned', async (ctx, next) => {
-//   const { user } = ctx.params;
-
-//   handleRequest(ctx, () => {
-//     const { pinned } = users[user];
-//     console.log(pinned);
-//     if (pinned) {
-//       ctx.body = organizer.getMessageById(user, pinned);
-//     } else {
-//       ctx.status = 204;
-//     }
-//   });
-//   return await next();
-// })
-
-// .put('/:user/pinned/:id', async (ctx, next) => {
-//   const { user, id } = ctx.params;
-
-//   handleRequest(ctx, () => {
-//     if (id === 'null') {
-//       organizer.unpinMessage(user);
-//       ctx.status = 204;
-//     } else {
-//       organizer.pinMessage(user, id);
-//       ctx.body = organizer.getMessageById(id);
-//     }
-//   });
-//   return await next();
-// });
 
 app.use(router.routes()).use(router.allowedMethods());
 app.use(serve(publicDirPath));

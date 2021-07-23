@@ -79,7 +79,7 @@ module.exports = {
         type: 'sticker',
         id: '5',
         date: '2021-07-06T13:07:17.447Z',
-        content: { pack: 'floppa', id: 2 },
+        content: { pack: 'floppa', id: 2, src: 'stickers/floppa/2.webp' },
         isFavorite: false,
       },
       {
