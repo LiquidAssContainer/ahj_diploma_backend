@@ -45,6 +45,7 @@ router
   .get('/:user/messages', async (ctx, next) => {
     const { user } = ctx.params;
     const { before } = ctx.query;
+
     if (before) {
       ctx.body = organizer.getMessagesBeforeMsgId(user, before);
     } else {
@@ -61,8 +62,7 @@ router
     } = ctx.request;
 
     await handleRequest(ctx, async () => {
-      const newMessage = await organizer.addMessage(user, message, files);
-      ctx.body = newMessage;
+      ctx.body = await organizer.addMessage(user, message, files);
     });
     return await next();
   })
@@ -130,6 +130,7 @@ router
     if (!mediaTypes.includes(media)) {
       return await next();
     }
+
     await handleRequest(ctx, async () => {
       if (before) {
         ctx.body = organizer.getMessagesBeforeMsgId(user, before, media);
