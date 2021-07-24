@@ -32030,7 +32030,7 @@ var apiService = /*#__PURE__*/function () {
   return apiService;
 }();
 
-_defineProperty(apiService, "baseUrl", 'https://ahj-diploma-chaos-organizer.herokuapp.com');
+_defineProperty(apiService, "baseUrl", '');
 
 _defineProperty(apiService, "username", 'test');
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.find.js
@@ -32677,8 +32677,8 @@ var MessageList_MessageList = /*#__PURE__*/function () {
 
         if (mediaImage) {
           var img = mediaImage.firstElementChild;
-          var src = img.src,
-              filename = img.dataset;
+          var src = img.src;
+          var filename = img.dataset.filename;
 
           _this2.openImageModal({
             src: src,
