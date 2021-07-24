@@ -13,7 +13,7 @@ module.exports = {
       {
         type: 'text',
         id: '2',
-        date: '2021-07-04T15:07:17.447Z',
+        date: '2021-07-05T15:07:17.447Z',
         content: 'Посмотрите на кота в шапке-лягушке!',
         isFavorite: true,
         attachments: {
@@ -28,7 +28,7 @@ module.exports = {
       {
         type: 'text',
         id: '3',
-        date: '2021-07-04T15:07:17.447Z',
+        date: '2021-07-06T15:07:17.447Z',
         content: 'Картинки всякие разные',
         isFavorite: false,
         attachments: {
@@ -55,7 +55,7 @@ module.exports = {
       {
         type: 'text',
         id: '4',
-        date: '2021-07-04T15:07:17.447Z',
+        date: '2021-07-07T15:07:17.447Z',
         content: 'Видосики всякие разные',
         isFavorite: false,
         attachments: {
@@ -78,14 +78,14 @@ module.exports = {
       {
         type: 'sticker',
         id: '5',
-        date: '2021-07-06T13:07:17.447Z',
+        date: '2021-07-08T13:07:17.447Z',
         content: { pack: 'floppa', id: 2, src: 'stickers/floppa/2.webp' },
         isFavorite: false,
       },
       {
         type: 'text',
         id: '6',
-        date: '2021-08-04T15:07:17.447Z',
+        date: '2021-07-10T15:07:17.447Z',
         content: 'dipi shmot',
         isFavorite: true,
         attachments: {
@@ -108,7 +108,7 @@ module.exports = {
       {
         type: 'text',
         id: '7',
-        date: '2021-07-06T17:07:17.447Z',
+        date: '2021-07-11T17:07:17.447Z',
         content: 'Всякие разного типа файлы',
         isFavorite: false,
         attachments: {
@@ -139,7 +139,7 @@ module.exports = {
       {
         type: 'files',
         id: '8',
-        date: '2021-07-06T17:07:17.447Z',
+        date: '2021-07-13T17:07:17.447Z',
         isFavorite: false,
         attachments: {
           images: [
@@ -175,7 +175,7 @@ module.exports = {
         content:
           'Всякие ссылочки (типа https://ru.wikipedia.org/wiki/JavaScript) вроде нормально парсятся и отображаются. Вот ещё ссылочки: https://ru.wikipedia.org/wiki/TypeScript, https://ru.wikipedia.org/wiki/%D0%AD%D0%B9%D1%85,_%D0%91%D1%80%D0%B5%D0%BD%D0%B4%D0%B0%D0%BD. Регулярку брал не готовую, а сделал свою, так что количество покрываемых случаев очень ограниченное.',
         id: '10',
-        date: '2021-07-17T17:07:17.447Z',
+        date: '2021-07-18T17:07:17.447Z',
         isFavorite: false,
       },
       {
@@ -186,7 +186,6 @@ module.exports = {
         isFavorite: false,
       },
     ],
-    // pinned: '1',
   },
 
   floppa: {
