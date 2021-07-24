@@ -32021,14 +32021,6 @@ var apiService = /*#__PURE__*/function () {
       });
     }
   }, {
-    key: "sendSticker",
-    value: function sendSticker(formData) {
-      return this.request("".concat(this.username, "/messages"), {
-        method: 'POST',
-        body: formData
-      });
-    }
-  }, {
     key: "getStickers",
     value: function getStickers() {
       return this.request('stickers');
@@ -32038,7 +32030,7 @@ var apiService = /*#__PURE__*/function () {
   return apiService;
 }();
 
-_defineProperty(apiService, "baseUrl", '');
+_defineProperty(apiService, "baseUrl", 'https://ahj-diploma-chaos-organizer.herokuapp.com');
 
 _defineProperty(apiService, "username", 'test');
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.find.js
@@ -32676,6 +32668,11 @@ var MessageList_MessageList = /*#__PURE__*/function () {
       });
       document.addEventListener('click', function (_ref3) {
         var target = _ref3.target;
+
+        if (target.classList.contains('download_btn')) {
+          return;
+        }
+
         var mediaImage = target.closest('.media_image');
 
         if (mediaImage) {
@@ -33544,29 +33541,14 @@ var NewMessageForm_NewMessageForm = /*#__PURE__*/function () {
                   _iterator.f();
                 }
 
-                _context.t0 = data.type;
-                _context.next = _context.t0 === 'sticker' ? 7 : 11;
-                break;
-
-              case 7:
-                _context.next = 9;
-                return apiService.sendSticker(formData);
-
-              case 9:
-                message = _context.sent;
-                return _context.abrupt("break", 14);
-
-              case 11:
-                _context.next = 13;
+                _context.next = 6;
                 return apiService.sendMessage(formData);
 
-              case 13:
+              case 6:
                 message = _context.sent;
-
-              case 14:
                 this.messages.renderNewMessage(message);
 
-              case 15:
+              case 8:
               case "end":
                 return _context.stop();
             }
